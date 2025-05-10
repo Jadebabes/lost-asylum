@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost Asylum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Spectral SC', serif;
+      background: #000;
+      color: #e0dede;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Fog overlay */
+    .fog {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://i.imgur.com/5M1C2MZ.png') repeat;
+      opacity: 0.04;
+      z-index: 0;
+      animation: drift 180s linear infinite;
+    }
+
+    @keyframes drift {
+      0% { background-position: 0 0; }
+      100% { background-position: 3000px 3000px; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: radial-gradient(ellipse at center, #2a0000 0%, #000 100%);
+      border-bottom: 3px solid crimson;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Typewriter animation */
+    h1 {
+      font-size: 4.5rem;
+      color: crimson;
+      overflow: hidden;
+      border-right: 0.15em solid crimson;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 2px;
+      animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+      font-family: 'Spectral SC', serif;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: crimson }
+    }
+
+    nav {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #aaa;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: crimson;
+      text-shadow: 0 0 5px red;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid crimson;
+      padding-bottom: 0.5rem;
+      color: crimson;
+      font-size: 2.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .character {
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      border-left: 4px solid crimson;
+    }
+
+    .ending {
+      background: #111;
+      padding: 2rem;
+      border: 1px solid crimson;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background: #111;
+      color: #666;
+      text-align: center;
+      padding: 2rem;
+      border-top: 3px solid crimson;
+      font-size: 1.1rem;
+    }
+
+    .like-button {
+      margin-top: 1rem;
+      background: none;
+      border: 2px solid crimson;
+      color: crimson;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .like-button:hover {
+      background: crimson;
+      color: #000;
+    }
+
+    .section p, .section li {
+      animation: pulse 10s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      100% { opacity: 0.85; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fog Layer -->
+  <div class="fog"></div>
+
+  <header>
+    <h1>Lost Asylum</h1>
+    <p style="margin-top: 1rem;">By Prosidha Bag — The silence has a voice...</p>
+    <button onclick="likeStory()" class="like-button">❤️ Like this story</button>
+    <span id="likeCount" style="margin-left: 10px; color: #ccc;">0</span>
+  </header>
+
+  <nav>
+    <a href="#prologue">Prologue</a>
+    <a href="#characters">Characters</a>
+    <a href="#chapters">Chapters</a>
+    <a href="#endings">Endings</a>
+    <a href="lost asylum.docx" target="_blank">Read Book</a>
+  </nav>
+
+  <section class="section" id="prologue">
+    <h2>Prologue: Whispered Silence</h2>
+    <p>You are Evelyn Gray, drawn to a forgotten asylum by the bloodstained journal of your vanished mother. The gates close. The fog thickens. Violet Hill Asylum awaits...</p>
+
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="lost asylum.docx" target="_blank" style="color: crimson; font-size: 1.5rem; text-decoration: none;">
+        📖 Read the Full Book (PDF)
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="characters">
+    <h2>Key Characters</h2>
+    <div class="character">
+      <h3>Evelyn Gray – The Seeker</h3>
+      <p>Relentless, haunted, and stitched to a mother she barely knew. The asylum whispers her name.</p>
+    </div>
+    <div class="character">
+      <h3>Dr. Alaric Vane – The Whispering Doctor</h3>
+      <p>Floating in static, calm as broken glass. His experiments left minds unraveled.</p>
+    </div>
+    <div class="character">
+      <h3>Clara \"The Doll\" Mirelle – Patient #042</h3>
+      <p>She hums lullabies through porcelain stitches. Her drawings predict your death.</p>
+    </div>
+    <div class="character">
+      <h3>Mother Gray – The Vanished Voice</h3>
+      <p>Seen only in dreams. Her lullaby never ends… unless you silence the past.</p>
+    </div>
+  </section>
+
+  <section class="section" id="chapters">
+    <h2>Chapters</h2>
+    <ul>
+      <li><strong>The Dollmaker's Nest:</strong> A lullaby of stitched mouths and laughing dolls.</li>
+      <li><strong>The Clockwork Morgue:</strong> Time repeats, but never heals.</li>
+      <li><strong>The Mirror Labyrinth:</strong> Where your reflection wants to become you.</li>
+      <li><strong>The Feast of Echoes:</strong> Every scream leaves a flavor behind.</li>
+      <li><strong>The Whisper Tree:</strong> Where endings hum like lullabies in the leaves.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="endings">
+    <h2>Multiple Endings</h2>
+    <div class="ending">
+      <h3>Control Ending</h3>
+      <p>You become the asylum’s new voice, echoing through every journal page.</p>
+    </div>
+    <div class="ending">
+      <h3>Destruction Ending</h3>
+      <p>The screen goes black. No credits. Just silence.</p>
+    </div>
+    <div class="ending">
+      <h3>Forget Ending</h3>
+      <p>The game restarts—but something’s changed. The gate is not closed.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Prosidha Bag — Lost Asylum. Step softly... they're still listening.
+  </footer>
+
+  <script>
+    let likes = 0;
+    function likeStory() {
+      likes++;
+      document.getElementById('likeCount').innerText = likes;
+    }
+  </script>
+</body>
+</html>
